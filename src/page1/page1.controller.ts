@@ -4,11 +4,10 @@ import { Page1Service } from './page1.service';
 
 @Controller('page1')
 export class Page1Controller {
-
-    constructor(private readonly page1Service: Page1Service) {}
+  constructor(private readonly page1Service: Page1Service) {}
 
   @Post()
   async import(@Body() page1Dto: Page1Dto): Promise<Page1Dto> {
-    return await this.page1Service.page1Import(page1Dto);
+    return await this.page1Service.import(page1Dto);
   }
 }
