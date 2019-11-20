@@ -1,0 +1,8 @@
+yarn run v1.20.0-20191008.1147
+$ nest start
+[32m[Nest] 9060   - [39m11/20/2019, 11:57:41   [33m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 9060   - [39m11/20/2019, 11:57:41   [33m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[33m +11ms[39m
+[32m[Nest] 9060   - [39m11/20/2019, 11:57:41   [33m[RoutesResolver] [39m[32mAppController {/}:[39m[33m +13ms[39m
+[32m[Nest] 9060   - [39m11/20/2019, 11:57:41   [33m[RouterExplorer] [39m[32mMapped {/, POST} route[39m[33m +3ms[39m
+[32m[Nest] 9060   - [39m11/20/2019, 11:57:41   [33m[NestApplication] [39m[32mNest application successfully started[39m[33m +1ms[39m
+Done in 7.90s.
