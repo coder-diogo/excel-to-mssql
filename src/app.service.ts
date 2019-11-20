@@ -7,4 +7,3 @@ export class AppService {
     return page1dto;
   }
 }
-git initgit init
