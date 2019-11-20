@@ -28,7 +28,7 @@ export class Page1Repository extends Repository<Page1> {
 
         if (!page1) {
             page1 = new Page1();
-            page1.CreateAt = new Date()
+            page1.CreateAt = new Date();
         }
 
         page1.Area = Area;
