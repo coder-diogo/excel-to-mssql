@@ -36,7 +36,8 @@ describe('Page1 Controller', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [Page1Controller],
-      providers: [Page1Service,
+      providers: [
+        Page1Service,
         { provide: Page1Repository, useFactory: mockPage1Repository },
       ],
     }).compile();

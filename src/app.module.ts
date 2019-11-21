@@ -6,4 +6,4 @@ import { typeOrmConfig } from './config/typeorm.config';
 @Module({
   imports: [TypeOrmModule.forRoot(typeOrmConfig), Page1Module],
 })
-export class AppModule { }
+export class AppModule {}
