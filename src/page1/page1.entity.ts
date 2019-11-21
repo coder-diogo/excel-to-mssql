@@ -54,5 +54,5 @@ export class Page1 extends BaseEntity {
     UpdatedAt: Date;
 
     @Column()
-    CreateAt: Date;
+    CreatedAt: Date;
 }

@@ -26,6 +26,7 @@
     "@nestjs/typeorm": "^6.2.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.11.0",
+    "jest-create-mock-instance": "^1.1.0",
     "mssql": "^6.0.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
