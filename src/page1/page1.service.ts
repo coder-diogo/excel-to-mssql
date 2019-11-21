@@ -1,7 +1,7 @@
 import { Page1 } from './page1.entity';
 import { Page1Dto } from './../dtos/page1.dto';
 import { Page1Repository } from './page1.repository';
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 
 import { InjectRepository } from '@nestjs/typeorm';
 import { Page1CreateDto } from '../dtos/page1-create.dto';
@@ -14,6 +14,7 @@ export class Page1Service {
   ) { }
 
   async createOrUpdate(page1dto: Page1Dto): Promise<Page1Dto> {
+
     const page1: Page1 = await this.page1Repository.findOne({ Theme: page1dto.Theme });
 
     if (!page1) {
@@ -29,5 +30,6 @@ export class Page1Service {
       return await page1Merged.save();
 
     }
+
   }
 }
