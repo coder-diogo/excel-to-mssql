@@ -89,7 +89,7 @@ describe('Page1 Controller', () => {
         page1Repository.find.mockResolvedValue([otherPage1Dto]);
         expect(await page1Controller.getNextEntry(page1Dto)).toBe(otherPage1Dto);
         await expect(await page1Service.getCurrentPage1Instance(page1Dto)).toBe(page1Dto);
-        await expect(await page1Service.getLateralPage1Instance(1)).toBe(otherPage1Dto)
+        await expect(await page1Service.getLateralPage1Instance(1)).toBe(otherPage1Dto);
       });
 
       it('should throw error current entry not found', async () => {
