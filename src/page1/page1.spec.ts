@@ -4,7 +4,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { Page1Service } from './page1.service';
 import { Page1Repository } from './page1.repository';
 import { Page1Controller } from './page1.controller';
-import { NotFoundException, BadRequestException } from '@nestjs/common';
+import { NotFoundException } from '@nestjs/common';
 
 const mockPage1Repository = () => ({
   create: jest.fn(),
@@ -73,47 +73,72 @@ describe('Page1 Controller', () => {
         page1Repository.findOne.mockResolvedValue();
         mockPage1.save.mockResolvedValue(page1Dto);
         page1Repository.create.mockReturnValue(mockPage1);
-        await expect(await page1Controller.createOrUpdate(page1Dto)).toBe(page1Dto);
+        await expect(await page1Controller.createOrUpdate(page1Dto)).toBe(
+          page1Dto,
+        );
       });
 
       it('should be Updated', async () => {
         page1Repository.findOne.mockResolvedValue(page1Dto);
         mockPage1.save.mockResolvedValue(page1Dto);
         page1Repository.merge.mockReturnValue(mockPage1);
-        await expect(await page1Controller.createOrUpdate(page1Dto)).toBe(page1Dto);
+        await expect(await page1Controller.createOrUpdate(page1Dto)).toBe(
+          page1Dto,
+        );
       });
     });
     describe('Get Next Entry', () => {
       it('should get next Entry', async () => {
         page1Repository.findOne.mockResolvedValue(page1Dto);
         page1Repository.find.mockResolvedValue([otherPage1Dto]);
-        expect(await page1Controller.getNextEntry(page1Dto)).toBe(otherPage1Dto);
-        await expect(await page1Service.getCurrentPage1Instance(page1Dto)).toBe(page1Dto);
-        await expect(await page1Service.getLateralPage1Instance(1)).toBe(otherPage1Dto);
+        expect(await page1Controller.getNextEntry(page1Dto)).toBe(
+          otherPage1Dto,
+        );
+        await expect(await page1Service.getCurrentPage1Instance(page1Dto)).toBe(
+          page1Dto,
+        );
+        await expect(await page1Service.getLateralPage1Instance(1)).toBe(
+          otherPage1Dto,
+        );
       });
 
       it('should throw error current entry not found', async () => {
         page1Repository.findOne.mockResolvedValue(undefined);
-        await expect(page1Controller.getNextEntry(page1Dto)).rejects.toThrowError(NotFoundException);
-        await expect(page1Service.getCurrentPage1Instance(page1Dto)).rejects.toThrowError(NotFoundException);
+        await expect(
+          page1Controller.getNextEntry(page1Dto),
+        ).rejects.toThrowError(NotFoundException);
+        await expect(
+          page1Service.getCurrentPage1Instance(page1Dto),
+        ).rejects.toThrowError(NotFoundException);
       });
 
       it('should throw error No next entry available', async () => {
         page1Repository.findOne.mockResolvedValue(page1Dto);
         page1Repository.find.mockResolvedValue([]);
-        await expect(page1Controller.getNextEntry(page1Dto)).rejects.toThrowError(NotFoundException);
-        await expect(await page1Service.getCurrentPage1Instance(page1Dto)).toBe(page1Dto);
-        await expect(page1Service.getLateralPage1Instance(1)).rejects.toThrowError(NotFoundException);
+        await expect(
+          page1Controller.getNextEntry(page1Dto),
+        ).rejects.toThrowError(NotFoundException);
+        await expect(await page1Service.getCurrentPage1Instance(page1Dto)).toBe(
+          page1Dto,
+        );
+        await expect(
+          page1Service.getLateralPage1Instance(1),
+        ).rejects.toThrowError(NotFoundException);
       });
-
     });
     describe('Get Previous Entry', () => {
       it('should get previous entry', async () => {
         page1Repository.findOne.mockResolvedValue(page1Dto);
         page1Repository.find.mockResolvedValue([otherPage1Dto]);
-        expect(await page1Controller.getPreviousEntry(page1Dto)).toBe(otherPage1Dto);
-        await expect(await page1Service.getCurrentPage1Instance(page1Dto)).toBe(page1Dto);
-        await expect(await page1Service.getLateralPage1Instance(1)).toBe(otherPage1Dto);
+        expect(await page1Controller.getPreviousEntry(page1Dto)).toBe(
+          otherPage1Dto,
+        );
+        await expect(await page1Service.getCurrentPage1Instance(page1Dto)).toBe(
+          page1Dto,
+        );
+        await expect(await page1Service.getLateralPage1Instance(1)).toBe(
+          otherPage1Dto,
+        );
       });
     });
   });
