@@ -1,37 +1,37 @@
 export class Page1CreateDto {
-    Id?: number;
+  Id?: number;
 
-    Theme: string;
+  Theme: string;
 
-    Area: string;
+  Area: string;
 
-    Data: string;
+  Data: string;
 
-    Objective: string;
+  Objective: string;
 
-    Coord: string;
+  Coord: string;
 
-    Scope: string;
+  Scope: string;
 
-    OccurrenceDate: string;
+  OccurrenceDate: string;
 
-    ReportDate: string;
+  ReportDate: string;
 
-    Norm: string;
+  Norm: string;
 
-    CureentSituation: string;
+  CureentSituation: string;
 
-    FrequentOccurrences: string;
+  FrequentOccurrences: string;
 
-    ProblemImpact: string;
+  ProblemImpact: string;
 
-    OccurrenceLocationLine: string;
+  OccurrenceLocationLine: string;
 
-    OccurrenceLocationWorkSpace: string;
+  OccurrenceLocationWorkSpace: string;
 
-    OccurrenceLocationEquipment: string;
+  OccurrenceLocationEquipment: string;
 
-    CreatedAt: Date;
+  CreatedAt: Date;
 
-    UpdatedAt: Date;
+  UpdatedAt: Date;
 }

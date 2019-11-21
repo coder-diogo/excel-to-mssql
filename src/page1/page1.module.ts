@@ -9,4 +9,4 @@ import { Page1Repository } from './page1.repository';
   controllers: [Page1Controller],
   providers: [Page1Service],
 })
-export class Page1Module { }
+export class Page1Module {}
