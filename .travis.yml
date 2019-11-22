@@ -8,7 +8,7 @@ after_success:
 before_deploy:
   - yarn build
   - cd dist
-  - tar -zcf build.tar.gz *
+  - tar -zcf ../build.tar.gz *
 
 deploy:
   provider: elasticbeanstalk
@@ -18,9 +18,9 @@ deploy:
   app: Browning
   env: Browning-Excel-env
   bucket: elasticbeanstalk-eu-west-2-119369035511
-  cleanup: false
-  skip_cleanup: false
-  zip_file: dist/build.tar.gz
+  deploy.skip_cleanup: true
+  skip_cleanup: true
+  zip_file: build.tar.gz
 
   on:
     repo: coder-diogo/excel-to-mssql
