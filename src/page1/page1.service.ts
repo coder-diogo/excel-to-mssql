@@ -76,5 +76,4 @@ export class Page1Service {
     }
     return page1[0];
   }
-  z
 }
