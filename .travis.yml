@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-- node
-- lts/*
-- '10'
+  - node
+  - lts/*
+  - '10'
 script: yarn test:cov
 after_success:
-- yarn global add codecov
-- codecov
+  - yarn global add codecov
+  - codecov
 deploy:
   provider: elasticbeanstalk
   access_key_id: AKIAJJFEQZFRDZDMPKFQ
@@ -16,3 +16,4 @@ deploy:
   env: Browning-Excel-env
   on:
     repo: coder-diogo/excel-to-mssql
+    branch: master
