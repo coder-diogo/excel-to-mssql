@@ -15,7 +15,7 @@ export class Page1Service {
   constructor(
     @InjectRepository(Page1Repository)
     private page1Repository: Page1Repository,
-  ) {}
+  ) { }
 
   async createOrUpdate(page1dto: Page1Dto): Promise<Page1CreateDto> {
     const page1: Page1 = await this.page1Repository.findOne({
@@ -40,26 +40,10 @@ export class Page1Service {
   }
 
   async getNextEntry(page1dto: Page1Dto): Promise<Page1> {
-    const page1: Page1 = await this.page1Repository.findOne({
-      Theme: page1dto.Theme,
-    });
-
-    if (!page1) {
-      throw new NotFoundException({
-        statusCode: 404,
-        error: 'Current Entry not found',
-      });
-    }
+    const page1: Page1 = await this.getCurrentPage1Instance(page1dto);
     const nextId = page1.id + 1;
-    const page1Next: Page1[] = await this.page1Repository.find({ id: nextId });
-
-    if (page1Next.length === 0) {
-      throw new NotFoundException({
-        statusCode: 404,
-        error: 'No next entry available',
-      });
-    }
-    return page1Next[0];
+    const page1Next: Page1 = await this.getLateralPage1Instance(nextId);
+    return page1Next;
   }
 
   async getPreviousEntry(page1dto: Page1Dto): Promise<Page1> {
@@ -92,4 +76,5 @@ export class Page1Service {
     }
     return page1[0];
   }
+  z
 }
