@@ -14,6 +14,7 @@ deploy:
   region: eu-west-2
   app: Browning
   env: Browning-Excel-env
+  bucket: elasticbeanstalk-eu-west-2-119369035511
   on:
     repo: coder-diogo/excel-to-mssql
     branch: master
