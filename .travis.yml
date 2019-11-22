@@ -9,7 +9,7 @@ after_success:
   - codecov
 deploy:
   provider: elasticbeanstalk
-  bucket: 'browning-excel'
+  bucket_name: 'browning-excel'
   access_key_id: AKIAIBZLMDP4YX7OS64A
   secret_access_key:
     secure: CoFohxYzyb9yW/jRMBtncYWU9xZqCfgWiUzH+X/uJjavxENxI5hFbjiK+agB7LkfapUxJd2bpf9DN74zzH9Xwysa5Q+ssui1y6PZP39MbFmVL2ru2f/bi27tl974WqKqy6MK595cPKqGbHGVO8CgEiF3RpUcjAIlHXy4W9YXcNtGBE/5iQ+W5tFtQkFoftAwS+NKUHU9Qz98Lup+2BrbMPWdlRh7wE3wUr2SzXeBeAr6jq5H/0LtVJO7uv9/YoyFj3B/VlBfWqLxqeNiBVrzYO8Uw2RnyxQz+6gsPstLRPkDnlRmqQqT9kHrjARdw0bFYwsUXX6uLXZo2KqskDWEJj18fK59k/MBq3DLJsK5ouPJvQsUrMbdrV/IrDtpiWk3zFIDbetGy4s/ykOHBXE/OeEsTgVJb4ZueeBBQe80nnvsoaXa6xPVoE++Q+i8x5nsG/Ne/JlEX/7sgg+OeVDONAQYqN8MdmuEfz7m+6APpE9bh1ycQNBrqWE3JTDj/LkJ2UOAOGZm3+1dNYRxjaHEwV4QdvN0DU+iVU7QMngxbtumi3ersjpRtXx2fMF9OtkqjQ++c7EcPyyI05zbVH1W652lm62qUYzyxmdWrETy57tjS79sU71JlNW3537T35HuxUX1jXKVf13aHEo6K+2F+tKhJ0J8sghXQADpITECv7c=
