@@ -10,4 +10,14 @@ export class Page1Controller {
   async createOrUpdate(@Body() page1Dto: Page1Dto): Promise<Page1Dto> {
     return await this.page1Service.createOrUpdate(page1Dto);
   }
+
+  @Post('next')
+  async getNextEntry(@Body() page1dto: Page1Dto) {
+    return await this.page1Service.getNextEntry(page1dto);
+  }
+
+  @Post('next')
+  async getPreviousEntry(@Body() page1dto: Page1Dto) {
+    return await this.page1Service.getPreviousEntry(page1dto);
+  }
 }
