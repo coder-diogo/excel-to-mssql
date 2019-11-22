@@ -1,7 +1,5 @@
 language: node_js
 node_js:
-  - node
-  - lts/*
   - '10'
 script: yarn test:cov
 after_success:
