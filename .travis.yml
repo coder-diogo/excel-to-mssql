@@ -1,10 +1,9 @@
 language: node_js
 node_js:
-  - "node"
-  - "lts/*"
-  - "10"
-script:
-  yarn test:cov
+  - 'node'
+  - 'lts/*'
+  - '10'
+script: yarn test:cov
 # Report coverage
 after_success:
   - yarn global add codecov
