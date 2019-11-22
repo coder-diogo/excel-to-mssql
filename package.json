@@ -7,7 +7,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build && cp package.json dist/",
-    "deploy": "npm i && nest build",
+    "deploy": "npm i && nest build && npm run start:prod",
     "format": "prettier --write \"src/**/**.ts\" \"test/**/**.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
