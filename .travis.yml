@@ -9,6 +9,7 @@ before_deploy:
   - yarn build
   - cd dist
   - tar -zcf ../build.tar.gz *
+  - cd ..
 
 deploy:
   provider: elasticbeanstalk
