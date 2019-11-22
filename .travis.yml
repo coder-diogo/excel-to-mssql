@@ -8,6 +8,7 @@ after_success:
 before_deploy:
   - yarn build
   - cd dist
+  - yarn
   - tar -zcf ../build.tar.gz *
   - cd ..
 
