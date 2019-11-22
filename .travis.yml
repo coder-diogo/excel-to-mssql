@@ -1,23 +1,18 @@
 language: node_js
 node_js:
-  - node
-  - lts/*
-  - '10'
+- node
+- lts/*
+- '10'
 script: yarn test:cov
 after_success:
-  - yarn global add codecov
-  - codecov
+- yarn global add codecov
+- codecov
 deploy:
   provider: elasticbeanstalk
-  access_key_id: AKIAI6KQKITMZZL72HMQ
-  secret_access_key:
-    secure: J36TtaQmG/kuw/H9AP4SBr4bXwG9AZXfdpYF3ltaEXeGaohoP3J2Vs3+letWeFYbRHZZabWUbJwP6fyk6U9SFY2vn2XCvbu9Uqx8K4yWO15VGVEEPpbkv9TbrewNITtLmYv2PNFJ+en5uJhrIJpv5vIChmPAdJ/qt41wDpVDDweMLFKtf65YP28bIBGOcT5+hfxQpeHo09ToVV4iwVkg1XNAaWNBvwDthrTCavf6+SF5UX4Tz7BMW94sHEbTE2c3aFivcL/sq8P+sDZHu/ehmh/HbKuIB/zuJFUOl810OT+INQDi3XPDi280WSUNsqUu07lWz5/BhQvc2RVquNTsFaWoNEOBjwBlWzfsWZbmgBTlAFt0HtUNj2QWqFkCCPWAo9lm2ATQU2+4ibLTolFodgSIoZd1SK1sjPaj7+aJ3hdfnly6n3HGm4mxYRnwe2tUXRPmPMiSFesEbQnJUSlbd1ApWlO72RtQ208PMdKXD8j7O+cuAXyNv6bXz6ZST/W5dtEcB3LEJwz6BLxYMMqg7McSx5B3ZeMK3JSYNAhRCIwDRbVqSUZlTPe274T9yewVHeWafQKuXO9LJUQFPl8VM6of4JiIDwkDd+hzpR80ylHJRRd71vcAUVESUgyvsQGfLUptElpZZ7/ckjqLhEPBb9JMuvKUn2ver3VTCfR629U=
+  access_key_id: AKIAJJFEQZFRDZDMPKFQ
+  secret_access_key: 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
   region: eu-west-2
   app: Browning
   env: Browning-Excel-env
   on:
     repo: coder-diogo/excel-to-mssql
-    branch: master
-  bucket_name: elasticbeanstalk-eu-west-2-119369035511
-  bucket_path: browning-excel
-  skip_cleanup: true
