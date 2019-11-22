@@ -18,7 +18,6 @@ deploy:
   app: Browning
   env: Browning-Excel-env
   bucket: elasticbeanstalk-eu-west-2-119369035511
-  deploy.skip_cleanup: true
   skip_cleanup: true
   zip_file: build.tar.gz
 
