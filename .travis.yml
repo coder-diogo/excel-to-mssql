@@ -7,6 +7,8 @@ after_success:
   - codecov
 before_deploy:
   - yarn build
+  - tar -zcf build.tar.gz /dist
+
 deploy:
   provider: elasticbeanstalk
   access_key_id: AKIAJJFEQZFRDZDMPKFQ
@@ -16,6 +18,8 @@ deploy:
   env: Browning-Excel-env
   bucket: elasticbeanstalk-eu-west-2-119369035511
   cleanup: false
+  zip-file: build.tar.gz
+
   on:
     repo: coder-diogo/excel-to-mssql
     branch: master
