@@ -1,28 +1,9 @@
 language: node_js
 node_js:
   - '10'
+  - 'lts/*'
+  - 'node'
 script: yarn test:cov
 after_success:
   - yarn global add codecov
   - codecov
-before_deploy:
-  - yarn build
-  - cd dist
-  - yarn
-  - tar -zcf ../build.tar.gz *
-  - cd ..
-
-deploy:
-  provider: elasticbeanstalk
-  access_key_id: AKIAJJFEQZFRDZDMPKFQ
-  secret_access_key: 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
-  region: eu-west-2
-  app: Browning
-  env: Browning-Excel-env
-  bucket: elasticbeanstalk-eu-west-2-119369035511
-  skip_cleanup: true
-  zip_file: build.tar.gz
-
-  on:
-    repo: coder-diogo/excel-to-mssql
-    branch: master
